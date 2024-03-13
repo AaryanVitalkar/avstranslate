@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translation</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1 align="Center"> Language Translation Tool</h1>
+    <div class="container">
+        <form action="/translate" method="post">
+            <div class="input-container">
+                <label for="source-language">Source Language:</label>
+                <select id="source-language">
+                    <option value="english">English</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <label for="target-language">Translation In:</label>
+                <select id="target-language" name="target_language">
+                    <option value="hi">Hindi</option>
+                    <option value="bn">Bengali</option>
+                    <option value="as">Assamese</option>
+                    <option value="gu">Gujrati</option>
+                    <option value="mr">Marathi</option>
+                    <option value="ur">Urdu</option>
+                    <option value="bn">Bangla</option>
+                    <option value="kok">Konkani</option>
+                    <option value="mni">Manipuri</option>
+                    <option value="ne">Nepali</option>
+                    <option value="or">Oriya</option>
+                    <option value="pa">Punjabi</option>
+                    <option value="te">Telgu</option>
+                    <option value="doi">Dogri</option>
+                    <option value="brx">Bodo</option>
+                    <option value="kn">Kannada</option>
+                    <option value="ta">Tamil</option>
+                    <option value="ml">Malyalam</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <label for="input-text">Input Text:</label>
+                <textarea id="input-text" name="source_text"></textarea>
+            </div>
+            <input type="submit" value="Translate">
+        </form>
+        <h2>Translation Result</h2>
+        <div id="output-text" class="output-container">
+            {% if translated_text %}
+                {{ translated_text }}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
